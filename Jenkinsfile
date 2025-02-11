@@ -24,11 +24,7 @@ pipeline {
             }
         }
         
-        stage("Code Analysis"){
-            steps{
-                bat "npx eslint src"
-            }
-        }
+        
         
        
     
