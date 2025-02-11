@@ -30,17 +30,7 @@ pipeline {
             }
         }
         
-        stage("Deploy"){
-            steps{
-                script{
-                    def netlifySiteID = '62227442-d1ae-497d-90ae-da38290aee3c'
-                    def netlifyAccessToken = 'nfp_tAFcb1AZ1dEEzTC7LJ8WhLY5Z8Eqt4KY3d7b'
-                    
-                    bat "npm install netlify-cli --save-dev"
-                    bat "npx netlify deploy --site ${netlifySiteID} --auth ${netlifyAccessToken} --dir ./build --prod"
-                }
-            }
-        }
+       
     
     }
 }
