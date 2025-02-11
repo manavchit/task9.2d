@@ -8,7 +8,7 @@ pipeline {
         stage("Install") {
             steps {
                 git url : "https://github.com/manavchit/task9.2d.git", branch : "main"
-                bat "npm install --verbose -omit=optional"
+                bat "npm install --verbose --legacy-peer-deps"
             }
         }
         stage("Build"){
@@ -21,6 +21,11 @@ pipeline {
         stage("Test"){
             steps{
                 bat "npm test -- --passWithNoTests"
+            }
+        }
+         stage("Code Analysis"){
+            steps{
+                bat "npx eslint src"
             }
         }
         
